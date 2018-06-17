@@ -93,9 +93,10 @@ def from_date(y, m=None, d=None, tz=JST):
     return None
 
 
-def today():
-    """現在の日付が二十四節気であれば Koyomi オブジェクトを返す"""
-    return from_date(datetime.now(tz=timezone.utc))
+def today(tz=JST):
+    """日本時間での現在の日付が二十四節気であれば Koyomi オブジェクトを返す"""
+    now = datetime.now(tz=tz)
+    return from_date(now.year, now.month, now.day, tz=tz)
 
 
 __all__ = [Koyomi, from_date, today]

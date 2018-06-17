@@ -27,11 +27,11 @@ koyomi.from_date(datetime(2019, 3, 21, tzinfo=JST))  #=> <Koyomi name=春分>
 ```
 
 ### `koyomi.today`
-``` python
-koyomi.from_date(datetime.now(tz=timezone.utc))
-```
+日本時間での現在の日付が二十四節気だった場合に `Koyomi` オブジェクトを返す。
 
-のエイリアス。
+``` python
+koyomi.today()  #=> <Koyomi name=春分>
+```
 
 ### `Koyomi` object
 `name` と `description` プロパティが利用可能。
